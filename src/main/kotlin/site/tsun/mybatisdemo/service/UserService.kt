@@ -8,5 +8,5 @@ interface UserService {
     fun findUser(id: Int): User
     fun save(record: User): Int
     fun update(record: User): Int
-    fun delete(id: Int): Int
+    fun delete(id: Int): Boolean
 }

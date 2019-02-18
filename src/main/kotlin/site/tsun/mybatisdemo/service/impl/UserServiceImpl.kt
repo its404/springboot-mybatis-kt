@@ -1,5 +1,7 @@
 package site.tsun.mybatisdemo.service.impl
 
+import com.sun.org.apache.xpath.internal.operations.Bool
+import org.apache.ibatis.annotations.SelectKey
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Propagation
@@ -29,7 +31,7 @@ class UserServiceImpl: UserService {
     }
 
     @Transactional(propagation=Propagation.REQUIRED)
-    override fun delete(id: Int): Int {
+    override fun delete(id: Int): Boolean {
         return userMapper.delete(id)
     }
 
