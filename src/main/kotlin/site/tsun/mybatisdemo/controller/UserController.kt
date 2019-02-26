@@ -17,6 +17,7 @@ class UserController {
     }
 
     @PostMapping("/user", consumes = ["application/json"], produces = ["application/json"])
+    // @RequestBody force request body to be json format
     fun saveUser(@RequestBody user: User): User {
         userService.save(user)
         return user
